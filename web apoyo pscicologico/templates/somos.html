@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+
+{% block title %}Quiénes Somos - Apoyo Psicológico{% endblock %}
+
+{% block header %}Quiénes Somos{% endblock %}
+
+{% block content %}
+<style>
+    .about-container {
+        padding: 10px 0;
+    }
+    
+    .mission-section {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .section-icon {
+        font-size: 40px;
+        color: #3D56B2;
+        margin-bottom: 15px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    .section-description {
+        font-size: 16px;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    
+    .values-section {
+        margin-bottom: 40px;
+    }
+    
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .value-card {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+    }
+    
+    .value-icon {
+        font-size: 30px;
+        color: #3D56B2;
+        margin-bottom: 10px;
+    }
+    
+    .value-title {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .value-description {
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .team-section {
+        margin-bottom: 40px;
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 20px;
+    }
+    
+    .team-card {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-member-img {
+        height: 200px;
+        background-color: #3D56B2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 60px;
+    }
+    
+    .team-member-info {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .team-member-name {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .team-member-role {
+        font-size: 14px;
+        color: #3D56B2;
+        margin-bottom: 10px;
+    }
+    
+    .team-member-bio {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+    
+    .team-member-social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #3D56B2;
+        transition: all 0.3s;
+    }
+    
+    .social-icon:hover {
+        background-color: #3D56B2;
+        color: white;
+    }
+</style>
+
+<div class="about-container">
+    <!-- Misión -->
+    <div class="mission-section">
+        <div class="section-icon">
+            <i class="fas fa-bullseye"></i>
+        </div>
+        <h2 class="section-title">Nuestra Misión</h2>
+        <p class="section-description">
+            Proporcionar apoyo psicológico accesible y especializado para personas con discapacidad auditiva, 
+            promoviendo su bienestar emocional y salud mental a través de profesionales capacitados en 
+            lenguaje de señas y herramientas adaptadas que faciliten una comunicación efectiva.
+        </p>
+    </div>
+    
+    <!-- Visión -->
+    <div class="mission-section">
+        <div class="section-icon">
+            <i class="fas fa-eye"></i>
+        </div>
+        <h2 class="section-title">Nuestra Visión</h2>
+        <p class="section-description">
+            Ser la plataforma líder en servicios de salud mental para la comunidad sorda, 
+            eliminando barreras de comunicación y promoviendo la inclusión en el ámbito de la salud mental, 
+            con un alcance global que permita llegar a todas las personas que lo necesiten.
+        </p>
+    </div>
+    
+    <!-- Valores -->
+    <div class="values-section">
+        <h2 class="section-title" style="text-align: center;">Nuestros Valores</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3 class="value-title">Empatía</h3>
+                <p class="value-description">
+                    Comprendemos las necesidades y experiencias únicas de cada persona.
+                </p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="value-title">Inclusión</h3>
+                <p class="value-description">
+                    Garantizamos que nuestros servicios sean accesibles para todos.
+                </p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="value-title">Confidencialidad</h3>
+                <p class="value-description">
+                    Respetamos la privacidad y seguridad de la información de nuestros usuarios.
+                </p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="value-title">Profesionalismo</h3>
+                <p class="value-description">
+                    Contamos con especialistas altamente capacitados y comprometidos.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Equipo -->
+    <div class="team-section">
+        <h2 class="section-title" style="text-align: center;">Nuestro Equipo</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-member-img">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="team-member-info">
+                    <h3 class="team-member-name">Ing. Maruja Caballero</h3>
+                    <div class="team-member-role">Directora y Psicóloga Clínica</div>
+                    <p class="team-member-bio">
+                        Especialista en sistema de desarrollo de base de datos
+                    </p>
+                    <div class="team-member-social">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-member-img">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="team-member-info">
+                    <h3 class="team-member-name">Ing. Sebastian Lopez</h3>
+                    <div class="team-member-role">Psicólogo e Intérprete de LSM</div>
+                    <p class="team-member-bio">
+                        Experto en progrmacion y diseño web.
+                    </p>
+                    <div class="team-member-social">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-member-img">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="team-member-info">
+                    <h3 class="team-member-name">Lic. Ana González</h3>
+                    <div class="team-member-role">Terapeuta e Instructora</div>
+                    <p class="team-member-bio">
+                        Especializada en técnicas de mindfulness y manejo de estrés para personas con discapacidad auditiva.
+                    </p>
+                    <div class="team-member-social">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
