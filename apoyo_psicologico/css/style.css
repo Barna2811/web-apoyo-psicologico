@@ -1,0 +1,292 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header y Navegación */
+header {
+    background-color: #5cb85c; /* Verde para un tema de bienestar */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Secciones principales */
+main {
+    padding: 20px 0;
+}
+
+section {
+    background-color: white;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    max-width: 800px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #e0f7fa; /* Un azul claro suave */
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hero h1 {
+    color: #00796b;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.cuestionario-section h2, .resultados-cuestionario h2, .auth-form h2, .content-section h2 {
+    text-align: center;
+    color: #4CAF50; /* Un verde vibrante */
+    margin-bottom: 30px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #4cae4c;
+}
+
+.btn-secondary {
+    background-color: #00bcd4; /* Un azul turquesa */
+}
+
+.btn-secondary:hover {
+    background-color: #00acc1;
+}
+
+/* Cuestionario */
+.cuestionario-section form {
+    margin-top: 20px;
+}
+
+.pregunta-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+}
+
+.pregunta-item p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.pregunta-item label {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.pregunta-item input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Resultados del Cuestionario */
+.resultados-cuestionario p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.resultados-cuestionario .alert-disclaimer {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+.resultados-cuestionario .alert-disclaimer strong {
+    color: #856404;
+}
+
+/* Formularios de Autenticación (Registrarse, Ingresar) */
+.auth-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: calc(100% - 22px); /* Ajuste para padding y border */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.auth-form button.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+.auth-form p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-form p a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+.auth-form p a:hover {
+    text-decoration: underline;
+}
+
+/* Mensajes de éxito/error */
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Preguntas Frecuentes */
+.faq-list .faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.faq-list .faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-list h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.faq-list p {
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+.call-to-action {
+    text-align: center;
+    background-color: #e3f2fd; /* Azul más oscuro para CTA */
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+.call-to-action h2 {
+    color: #1976d2;
+    margin-bottom: 15px;
+}
+
+.call-to-action p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 30px;
+}
