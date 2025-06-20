@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+
+{% block title %}Mi Perfil - Apoyo Psicológico{% endblock %}
+
+{% block header %}Mi Perfil{% endblock %}
+
+{% block content %}
+<style>
+    .profile-container {
+        padding: 10px 0;
+    }
+    
+    .profile-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        background-color: #3D56B2;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 40px;
+        margin-right: 20px;
+    }
+    
+    .profile-info h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .profile-info p {
+        font-size: 16px;
+        color: #666;
+    }
+    
+    .profile-edit-btn {
+        background-color: #f8f9fa;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        margin-top: 10px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .profile-edit-btn i {
+        margin-right: 5px;
+    }
+    
+    .profile-edit-btn:hover {
+        background-color: #eaeaea;
+    }
+    
+    .profile-tabs {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+    }
+    
+    .profile-tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        color: #666;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s;
+    }
+    
+    .profile-tab.active {
+        color: #3D56B2;
+        border-bottom-color: #3D56B2;
+    }
+    
+    .tab-content {
+        padding: 10px 0;
+    }
+    
+    .info-group {
+        margin-bottom: 15px;
+    }
+    
+    .info-group label {
+        display: block;
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 5px;
+    }
+    
+    .info-group .info-value {
+        font-size: 16px;
+        color: #333;
+    }
+    
+    .progress-container {
+        margin-bottom: 20px;
+    }
+    
+    .progress-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    
+    .progress-bar {
+        height: 8px;
+        background-color: #f1f1f1;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background-color: #3D56B2;
+    }
+    
+    .classes-list {
+        list-style: none;
+    }
+    
+    .class-item {
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .class-item-icon {
+        width: 40px;
+        height: 40px;
+        background-color: #f8f9fa;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        color: #3D56B2;
+    }
+    
+    .class-item-info h4 {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .class-item-info p {
+        font-size: 14px;
+        color: #666;
+        margin: 0;
+    }
+    
+    .class-item-progress {
+        margin-left: auto;
+        text-align: right;
+    }
+    
+    .class-item-progress span {
+        font-size: 14px;
+        color: #3D56B2;
+        font-weight: 500;
+    }
+</style>
+
+<div class="profile-container">
+    <div class="profile-header">
+        <div class="profile-avatar">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="profile-info">
+            <h2>{{ usuario }}</h2>
+            <p>Usuario desde: Abril 2025</p>
+            <button class="profile-edit-btn">
+                <i class="fas fa-pencil-alt"></i> Editar perfil
+            </button>
+        </div>
+    </div>
+    
+    <div class="profile-tabs">
+        <div class="profile-tab active">Información</div>
+        <div class="profile-tab">Progreso</div>
+        <div class="profile-tab">Mis clases</div>
+    </div>
+    
+    <div class="tab-content">
+        <!-- Tab de Información (visible por defecto) -->
+        <div id="tab-info">
+            <div class="info-group">
+                <label>Nombre completo</label>
+                <div class="info-value">{{ usuario }}</div>
+            </div>
+            
+            <div class="info-group">
+                <label>Correo electrónico</label>
+                <div class="info-value">{{ usuario }}@correo.com</div>
+            </div>
+            
+            <div class="info-group">
+                <label>Teléfono</label>
+                <div class="info-value">+52 55 1234 5678</div>
+            </div>
+            
+            <div class="info-group">
+                <label>Fecha de nacimiento</label>
+                <div class="info-value">01/01/1990</div>
+            </div>
+            
+            <div class="info-group">
+                <label>Género</label>
+                <div class="info-value">No especificado</div>
+            </div>
+            
+            <div class="info-group">
+                <label>Nivel de lenguaje de señas</label>
+                <div class="info-value">Intermedio</div>
+            </div>
+        </div>
+        
+        <!-- Tab de Progreso (oculto por defecto) -->
+        <div id="tab-progress" style="display: none;">
+            <div class="progress-container">
+                <div class="progress-title">
+                    <span>Progreso general</span>
+                    <span>65%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 65%;"></div>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-title">
+                    <span>Clases completadas</span>
+                    <span>4/8</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%;"></div>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-title">
+                    <span>Tiempo dedicado</span>
+                    <span>12 horas</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-title">
+                    <span>Evaluaciones completadas</span>
+                    <span>3/5</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tab de Mis Clases (oculto por defecto) -->
+        <div id="tab-classes" style="display: none;">
+            <ul class="classes-list">
+                <li class="class-item">
+                    <div class="class-item-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <div class="class-item-info">
+                        <h4>Introducción al Lenguaje de Señas</h4>
+                        <p>Prof. María Gómez</p>
+                    </div>
+                    <div class="class-item-progress">
+                        <span>100%</span>
+                    </div>
+                </li>
+                
+                <li class="class-item">
+                    <div class="class-item-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="class-item-info">
+                        <h4>Manejo de la Ansiedad</h4>
+                        <p>Dr. Juan Pérez</p>
+                    </div>
+                    <div class="class-item-progress">
+                        <span>75%</span>
+                    </div>
+                </li>
+                
+                <li class="class-item">
+                    <div class="class-item-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="class-item-info">
+                        <h4>Autoestima y Bienestar</h4>
+                        <p>Lic. Ana Martínez</p>
+                    </div>
+                    <div class="class-item-progress">
+                        <span>50%</span>
+                    </div>
+                </li>
+                
+                <li class="class-item">
+                    <div class="class-item-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="class-item-info">
+                        <h4>Habilidades Sociales</h4>
+                        <p>Dr. Carlos López</p>
+                    </div>
+                    <div class="class-item-progress">
+                        <span>30%</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript para el cambio de tabs
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.profile-tab');
+        const tabContents = [
+            document.getElementById('tab-info'),
+            document.getElementById('tab-progress'),
+            document.getElementById('tab-classes')
+        ];
+        
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', function() {
+                // Desactivar todas las pestañas
+                tabs.forEach(t => t.classList.remove('active'));
+                // Ocultar todos los contenidos
+                tabContents.forEach(content => content.style.display = 'none');
+                
+                // Activar la pestaña seleccionada
+                tab.classList.add('active');
+                // Mostrar el contenido correspondiente
+                tabContents[index].style.display = 'block';
+            });
+        });
+        
+        // Inicializar botón de editar perfil
+        const editBtn = document.querySelector('.profile-edit-btn');
+        editBtn.addEventListener('click', function() {
+            alert('Funcionalidad de edición de perfil en desarrollo');
+        });
+    });
+</script>
+{% endblock %}
